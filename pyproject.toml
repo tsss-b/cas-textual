@@ -1,0 +1,36 @@
+[build-system]
+requires = ["uv_build>=0.11.24,<0.12"]
+build-backend = "uv_build"
+
+[project]
+name = "castcode"
+version = "0.1.0"
+description = "A Textual terminal UI for the Claude Agent SDK."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "claude-agent-sdk==0.2.110",
+    "textual==8.2.7",
+]
+
+[project.scripts]
+castcode = "castcode.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "ruff==0.15.20",
+    "textual-dev==1.8.0",
+]
+
+[tool.ruff]
+extend-exclude = ["ref-docs", "exp-docs"]
+
+[tool.ruff.lint]
+extend-select = ["B"]
+ignore = ["B905"]
+
+[tool.uv.build-backend]
+module-name = "castcode"
+module-root = ""

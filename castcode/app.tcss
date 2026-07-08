@@ -1,0 +1,365 @@
+#chat {
+    height: 1fr;
+    padding: 1 2;
+}
+
+Banner {
+    height: auto;
+    width: 1fr;
+    border: round $foreground 30%;
+    padding: 1 2;
+    margin-bottom: 1;
+}
+
+.banner-art {
+    width: auto;
+}
+
+ChatMessage {
+    width: 1fr;
+    height: auto;
+    padding: 0 1;
+    margin-bottom: 1;
+}
+
+ChatMessage .marker {
+    width: 2;
+}
+
+ChatMessage .body {
+    width: 1fr;
+}
+
+AssistantMessage Markdown.body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+AssistantMessage Markdown.body > * {
+    margin: 0 0 1 0;
+    padding: 0;
+}
+
+AssistantMessage Markdown.body > *:last-child {
+    margin-bottom: 0;
+}
+
+UserMessage {
+    background: $boost;
+}
+
+UserMessage .marker {
+    color: $text-muted;
+}
+
+AssistantMessage .marker {
+    color: $foreground;
+}
+
+ToolMessage .marker {
+    width: 3;
+    color: $text-warning;
+}
+
+ToolMessage .body {
+    height: auto;
+}
+
+ToolMessage .tool-title {
+    width: 1fr;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+ToolMessage .tool-detail,
+ToolMessage .tool-preview,
+ToolMessage .tool-metrics {
+    color: $text-muted;
+    width: 1fr;
+    text-wrap: wrap;
+    overflow-x: hidden;
+}
+
+ToolMessage.-detail-error .tool-detail {
+    color: $text-error;
+}
+
+ToolMessage .tool-block-preview {
+    width: 1fr;
+    height: auto;
+    color: $foreground;
+    border-left: heavy $foreground 25%;
+    padding-left: 2;
+    text-wrap: wrap;
+    overflow-x: hidden;
+}
+
+ToolMessage .tool-subtools {
+    width: 1fr;
+    height: auto;
+}
+
+ToolSubtoolLine {
+    width: 1fr;
+    height: auto;
+    padding-left: 2;
+}
+
+ToolSubtoolLine .tool-subtool-status {
+    width: 3;
+    color: $text-warning;
+}
+
+ToolSubtoolLine.-done .tool-subtool-status {
+    color: $text-success;
+}
+
+ToolSubtoolLine.-error .tool-subtool-status {
+    color: $text-error;
+}
+
+ToolSubtoolLine.-overflow .tool-subtool-status,
+ToolSubtoolLine.-overflow .tool-subtool-title,
+ToolSubtoolLine.-overflow .tool-subtool-detail {
+    color: $text-muted;
+}
+
+ToolSubtoolLine .tool-subtool-title {
+    width: auto;
+    margin-right: 1;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+ToolSubtoolLine .tool-subtool-detail {
+    width: 1fr;
+    color: $text-muted;
+    text-wrap: wrap;
+    overflow-x: hidden;
+}
+
+ToolMessage .tool-changes {
+    width: 1fr;
+    height: auto;
+}
+
+ToolChangeLine {
+    width: 1fr;
+    height: auto;
+    padding-left: 2;
+}
+
+ToolChangeLine.-add {
+    background: #0f241b;
+}
+
+ToolChangeLine.-remove {
+    background: #2a1218;
+}
+
+ToolChangeLine.-context {
+    background: $boost;
+}
+
+ToolChangeLine .tool-change-line-no {
+    width: auto;
+    text-align: left;
+    color: $text-muted;
+}
+
+ToolChangeLine .tool-change-marker {
+    width: auto;
+    text-align: left;
+}
+
+ToolChangeLine.-add .tool-change-line-no,
+ToolChangeLine.-add .tool-change-marker {
+    color: $text-success;
+}
+
+ToolChangeLine.-remove .tool-change-line-no,
+ToolChangeLine.-remove .tool-change-marker {
+    color: $text-error;
+}
+
+ToolChangeLine.-context .tool-change-line-no,
+ToolChangeLine.-context .tool-change-marker {
+    color: $text-muted;
+}
+
+ToolChangeLine .tool-change-text {
+    width: 1fr;
+    text-wrap: wrap;
+    overflow-x: hidden;
+}
+
+ToolMessage .tool-error {
+    width: 1fr;
+    text-wrap: wrap;
+    overflow-x: hidden;
+    color: $text-error;
+    max-height: 4;
+}
+
+ToolMessage.-done .marker {
+    color: $text-success;
+}
+
+ToolMessage.-error .marker {
+    color: $text-error;
+}
+
+ToolApprovalPrompt,
+QuestionPrompt {
+    background: $boost;
+}
+
+ToolApprovalPrompt .marker,
+QuestionPrompt .marker {
+    color: $text-warning;
+}
+
+ToolApprovalPrompt .body,
+QuestionPrompt .body {
+    height: auto;
+}
+
+.inline-title {
+    width: 1fr;
+    color: $text;
+}
+
+.inline-description {
+    width: 1fr;
+    color: $text-muted;
+    margin: 1 0;
+}
+
+.inline-choices {
+    width: 1fr;
+    height: auto;
+}
+
+InlineChoice {
+    width: 1fr;
+    height: auto;
+}
+
+.inline-choice-label {
+    width: 1fr;
+    color: $text;
+}
+
+.inline-choice-description {
+    width: 1fr;
+    padding-left: 5;
+    color: $text-muted;
+}
+
+.inline-help {
+    width: 1fr;
+    margin-top: 1;
+    color: $text-muted;
+}
+
+.inline-input {
+    width: 1fr;
+    height: 1;
+    margin: 0;
+    padding: 0 0 0 5;
+    border: none;
+    background: transparent;
+}
+
+.inline-input:focus {
+    border: none;
+    background-tint: transparent;
+}
+
+.inline-input > .input--placeholder {
+    color: $text-muted;
+}
+
+NoticeMessage .marker {
+    color: $text-muted;
+}
+
+NoticeMessage .body {
+    color: $text-muted;
+}
+
+#activity {
+    height: 1;
+    padding: 0 2;
+    color: $text-muted;
+}
+
+#todos {
+    height: auto;
+    max-height: 6;
+    padding: 0 2;
+    color: $text-muted;
+    text-wrap: wrap;
+    overflow-x: hidden;
+}
+
+#prompt {
+    height: auto;
+    max-height: 12;
+    margin: 0 1;
+    border: round $primary;
+    background: transparent;
+}
+
+#command-popup {
+    height: auto;
+    max-height: 12;
+    margin: 0 1;
+    padding: 1;
+    background: $boost;
+    color: $text-muted;
+}
+
+#command-popup .command-popup-body {
+    width: 1fr;
+    height: auto;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+#bottom-takeover {
+    height: auto;
+    max-height: 12;
+    margin: 0 1;
+    padding: 1;
+    background: $boost;
+}
+
+Switcher,
+RewindPicker,
+ModelPicker {
+    width: 1fr;
+    height: auto;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+#prompt > .text-area--cursor-line {
+    background: transparent;
+}
+
+#status {
+    height: 1;
+    padding: 0 2;
+    color: $text-muted;
+    width: 1fr;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
